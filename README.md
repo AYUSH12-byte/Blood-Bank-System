@@ -186,41 +186,6 @@ npm run build
 npm run preview
 ```
 
-## 🔐 Environment Variables
-
-Create a `.env` file in the backend directory with the following variables:
-
-```
-# Server Configuration
-PORT=5000
-NODE_ENV=development
-
-# Database Configuration
-DB_HOST=localhost
-DB_USER=your_mysql_user
-DB_PASSWORD=your_mysql_password
-DB_NAME=blood_donation_db
-DB_PORT=3306
-
-# JWT Configuration
-JWT_SECRET=your_super_secret_jwt_key
-JWT_EXPIRE=7d
-REFRESH_TOKEN_SECRET=your_refresh_token_secret
-REFRESH_TOKEN_EXPIRE=30d
-
-# Email Configuration
-MAIL_HOST=smtp.gmail.com
-MAIL_PORT=587
-MAIL_USER=your_email@gmail.com
-MAIL_PASS=your_app_password
-MAIL_FROM=noreply@blooddonation.com
-
-# Frontend URL
-CLIENT_URL=http://localhost:5173
-
-# OTP Configuration
-OTP_EXPIRE=10  # in minutes
-```
 
 ## 🔌 API Endpoints
 
