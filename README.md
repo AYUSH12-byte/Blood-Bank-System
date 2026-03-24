@@ -282,7 +282,7 @@ This project is licensed under the ISC License - see the LICENSE file for detail
 
 ## 📧 Support
 
-For support, email your-email@example.com or open an issue in the repository.
+For support,ayuchy93858@example.com or open an issue in the repository.
 
 ---
 
