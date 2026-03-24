@@ -22,7 +22,7 @@ export default function AdminBloodStock() {
 
   const save = async (blood_type) => {
     try {
-      await api.put(`/admin/blood-stock/${encodeURIComponent(blood_type)}`, { units: Number(editing[blood_type]) });
+      await api.put('/admin/blood-stock', { blood_type, units: Number(editing[blood_type]) });
       load();
     } catch (err) { alert(err.response?.data?.message || 'Save failed.'); }
   };

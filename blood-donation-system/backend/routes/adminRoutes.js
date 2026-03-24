@@ -17,6 +17,6 @@ router.delete('/users/:id', deleteUser);
 router.get('/donations', getAllDonations);
 router.put('/donations/:id', updateDonationStatus);
 router.get('/blood-stock', getBloodStock);
-router.put('/blood-stock/:blood_type', updateBloodStock);
+router.put('/blood-stock', updateBloodStock);
 
 module.exports = router;

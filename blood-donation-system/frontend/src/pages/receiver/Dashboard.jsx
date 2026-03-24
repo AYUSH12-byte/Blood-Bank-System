@@ -11,8 +11,8 @@ export default function ReceiverDashboard() {
 
   useEffect(() => {
     Promise.all([
-      api.get('/receiver/blood-stock').then(r => setStock(r.data.stock)).catch(() => {}),
-      api.get('/receiver/requests').then(r => setRequests(r.data.requests)).catch(() => {}),
+      api.get('/receiver/blood-stock').then(r => setStock(r.data.stock)).catch(() => { }),
+      api.get('/receiver/requests').then(r => setRequests(r.data.requests)).catch(() => { }),
     ]).finally(() => setLoading(false));
   }, []);
 
@@ -33,19 +33,19 @@ export default function ReceiverDashboard() {
 
         {/* Stats */}
         <div className="stats-grid" style={{ marginBottom: '2rem' }}>
-          <div className="stat-card"><div className="stat-icon blue">📋</div>
+          <div className="stat-card"><div className="stat-icon1 blue"></div>
             <div><div className="stat-value">{requests.length}</div><div className="stat-label">My Requests</div></div></div>
-          <div className="stat-card"><div className="stat-icon orange">⏳</div>
+          <div className="stat-card"><div className="stat-icon1 orange"></div>
             <div><div className="stat-value">{requests.filter(r => r.status === 'pending').length}</div><div className="stat-label">Pending</div></div></div>
-          <div className="stat-card"><div className="stat-icon green">✅</div>
+          <div className="stat-card"><div className="stat-icon1 green"></div>
             <div><div className="stat-value">{requests.filter(r => r.status === 'completed').length}</div><div className="stat-label">Completed</div></div></div>
         </div>
 
         {/* Quick Actions */}
         <div className="grid-2" style={{ marginBottom: '2rem' }}>
           {[
-            { to: '/receiver/search', icon: '🔍', title: 'Find Donors', desc: 'Search donors by blood type & location' },
-            { to: '/receiver/requests', icon: '📋', title: 'My Requests', desc: 'Track your blood requests' },
+            { to: '/receiver/search', title: 'Find Donors', desc: 'Search donors by blood type & location' },
+            { to: '/receiver/requests', title: 'My Requests', desc: 'Track your blood requests' },
           ].map(l => (
             <Link key={l.to} to={l.to} className="card" style={{ padding: '1.5rem', display: 'flex', gap: '1rem', alignItems: 'center' }}
               onMouseOver={e => e.currentTarget.style.boxShadow = '0 8px 24px rgba(0,0,0,0.12)'}

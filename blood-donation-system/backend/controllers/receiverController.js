@@ -43,7 +43,7 @@ const searchDonors = async (req, res) => {
              u.name, u.email
       FROM donors d
       JOIN users u ON d.user_id = u.id
-      WHERE d.availability = TRUE AND u.is_verified = TRUE
+      WHERE d.availability = TRUE AND u.is_verified = TRUE AND d.blood_type IS NOT NULL
     `;
     const params = [];
     if (blood_type) {

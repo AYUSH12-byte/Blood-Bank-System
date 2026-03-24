@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import api from '../../api/axios';
 
 export default function ReceiverRequests() {
@@ -27,7 +28,7 @@ export default function ReceiverRequests() {
         ) : requests.length === 0 ? (
           <div className="card"><div className="card-body"><div className="empty-state">
             <div className="empty-icon">📋</div>
-            <p>No requests yet. <a href="/receiver/search" style={{ color: '#c53030' }}>Search for a donor</a> to get started.</p>
+            <p>No requests yet. <Link to="/receiver/search" style={{ color: '#c53030' }}>Search for a donor</Link> to get started.</p>
           </div></div></div>
         ) : (
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>

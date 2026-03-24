@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import api from '../../api/axios';
 
 const BLOOD_TYPES = ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-'];
@@ -12,6 +12,21 @@ export default function SearchDonors() {
   const [reqForm, setReqForm] = useState({ units: 1, message: '' });
   const [submitting, setSubmitting] = useState(false);
   const [msg, setMsg] = useState({ type: '', text: '' });
+
+  useEffect(() => {
+    // Load all donors initially when visiting the page
+    const loadInitialDonors = async () => {
+      setLoading(true);
+      try {
+        const res = await api.get('/receiver/search');
+        setDonors(res.data.donors);
+        setSearched(true);
+      } catch (err) {
+        console.error('Failed to quick-load donors on mount');
+      } finally { setLoading(false); }
+    };
+    loadInitialDonors();
+  }, []);
 
   const search = async (e) => {
     e.preventDefault();

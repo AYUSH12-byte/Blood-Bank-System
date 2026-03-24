@@ -12,12 +12,12 @@ CREATE TABLE  users (
   password VARCHAR(255) NOT NULL,
   role ENUM('admin', 'donor', 'receiver') NOT NULL DEFAULT 'receiver',
   is_verified BOOLEAN NOT NULL DEFAULT FALSE,
-  otp VARCHAR(6),
-  otp_expires_at DATETIME,
   reset_token VARCHAR(255) NULL,
   reset_token_expires_at DATETIME NULL,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  INDEX idx_email (email),
+  INDEX idx_role (role)
 );
 
 -- Donors profile table
@@ -67,7 +67,8 @@ CREATE TABLE  donation_requests (
   requested_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   responded_at DATETIME,
   FOREIGN KEY (donor_id) REFERENCES donors(id) ON DELETE CASCADE,
-  FOREIGN KEY (receiver_id) REFERENCES receivers(id) ON DELETE SET NULL
+  FOREIGN KEY (receiver_id) REFERENCES receivers(id) ON DELETE SET NULL,
+  INDEX idx_status (status)
 );
 
 -- Create default admin user (password: Admin@123)

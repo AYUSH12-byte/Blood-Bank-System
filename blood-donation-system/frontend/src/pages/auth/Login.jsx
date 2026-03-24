@@ -1,13 +1,16 @@
 import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 
 export default function Login() {
   const { login } = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
   const [form, setForm] = useState({ email: '', password: '' });
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+
+  const successMsg = location.state?.message || '';
 
   const handleChange = e => setForm({ ...form, [e.target.name]: e.target.value });
 
@@ -35,6 +38,7 @@ export default function Login() {
           <p>Sign in to your account</p>
         </div>
 
+        {successMsg && <div className="alert alert-success">{successMsg}</div>}
         {error && <div className="alert alert-error">{error}</div>}
 
         <form onSubmit={handleSubmit}>
@@ -44,10 +48,7 @@ export default function Login() {
               className="form-control" placeholder="you@example.com" required />
           </div>
           <div className="form-group">
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-              <label className="form-label">Password</label>
-              <Link to="/forgot-password" style={{ fontSize: '0.875rem', color: '#c0392b', textDecoration: 'none' }}>Forgot Password?</Link>
-            </div>
+            <label className="form-label">Password</label>
             <input type="password" name="password" value={form.password} onChange={handleChange}
               className="form-control" placeholder="••••••••" required />
           </div>

@@ -384,7 +384,14 @@ tbody tr:hover { background: var(--gray-50); }
   .grid-2, .grid-3 { grid-template-columns: 1fr; }
   table { font-size: 0.8rem; }
   thead th, tbody td { padding: 0.75rem; }
+  /* Navbar mobile */
+  .nav-links-desktop { display: none !important; }
+  .nav-hamburger { display: flex !important; }
+  .role-badge { display: inline-flex !important; }
 }
 @media (max-width: 480px) {
   .stats-grid { grid-template-columns: 1fr; }
+}
+@media (min-width: 769px) {
+  .nav-username { display: inline !important; }
 }

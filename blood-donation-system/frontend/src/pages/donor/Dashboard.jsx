@@ -12,9 +12,9 @@ export default function DonorDashboard() {
 
   useEffect(() => {
     Promise.all([
-      api.get('/donor/profile').then(r => setProfile(r.data.donor)).catch(() => {}),
-      api.get('/donor/blood-stock').then(r => setStock(r.data.stock)).catch(() => {}),
-      api.get('/donor/donations').then(r => setDonations(r.data.donations)).catch(() => {}),
+      api.get('/donor/profile').then(r => setProfile(r.data.donor)).catch(() => { }),
+      api.get('/donor/blood-stock').then(r => setStock(r.data.stock)).catch(() => { }),
+      api.get('/donor/donations').then(r => setDonations(r.data.donations)).catch(() => { }),
     ]).finally(() => setLoading(false));
   }, []);
 
@@ -51,18 +51,18 @@ export default function DonorDashboard() {
             </div>
           </div>
 
-          <div className="stat-card"><div className="stat-icon red">📋</div>
+          <div className="stat-card"><div className="stat-icon1 red"></div>
             <div><div className="stat-value">{donations.length}</div><div className="stat-label">Total Donations</div></div></div>
 
-          <div className="stat-card"><div className="stat-icon green">✅</div>
+          <div className="stat-card"><div className="stat-icon1 green"></div>
             <div><div className="stat-value">{donations.filter(d => d.status === 'completed').length}</div><div className="stat-label">Completed</div></div></div>
         </div>
 
         {/* Quick Actions */}
         <div className="grid-2" style={{ marginBottom: '2rem' }}>
           {[
-            { to: '/donor/profile', icon: '👤', title: 'Update Profile', desc: 'Set your blood type & availability' },
-            { to: '/donor/donations', icon: '🩸', title: 'My Donations', desc: 'View & register donations' },
+            { to: '/donor/profile', title: 'Update Profile', desc: 'Set your blood type & availability' },
+            { to: '/donor/donations', title: 'My Donations', desc: 'View & register donations' },
           ].map(l => (
             <Link key={l.to} to={l.to} className="card" style={{ padding: '1.5rem', display: 'flex', gap: '1rem', alignItems: 'center', cursor: 'pointer' }}
               onMouseOver={e => e.currentTarget.style.boxShadow = '0 8px 24px rgba(0,0,0,0.12)'}

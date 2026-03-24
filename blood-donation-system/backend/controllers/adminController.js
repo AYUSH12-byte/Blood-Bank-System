@@ -137,13 +137,16 @@ const getBloodStock = async (req, res) => {
 };
 
 // @desc    Update blood stock units
-// @route   PUT /api/admin/blood-stock/:blood_type
+// @route   PUT /api/admin/blood-stock
 const updateBloodStock = async (req, res) => {
-  const { units } = req.body;
+  const { blood_type, units } = req.body;
+  if (!blood_type || units === undefined) {
+    return res.status(400).json({ success: false, message: 'blood_type and units are required.' });
+  }
   try {
     await pool.query(
       'INSERT INTO blood_stock (blood_type, units) VALUES (?, ?) ON DUPLICATE KEY UPDATE units = ?, updated_at = NOW()',
-      [req.params.blood_type, units, units]
+      [blood_type, units, units]
     );
     res.json({ success: true, message: 'Blood stock updated.' });
   } catch (error) {

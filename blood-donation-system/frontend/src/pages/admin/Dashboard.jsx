@@ -28,12 +28,12 @@ export default function AdminDashboard() {
           <>
             <div className="stats-grid">
               {[
-                { icon: '👥', label: 'Total Users', value: data.stats.totalUsers, color: 'blue' },
-                { icon: '🩸', label: 'Donors', value: data.stats.totalDonors, color: 'red' },
-                { icon: '💉', label: 'Receivers', value: data.stats.totalReceivers, color: 'orange' },
-                { icon: '📋', label: 'Total Donations', value: data.stats.totalDonations, color: 'green' },
-                { icon: '⏳', label: 'Pending', value: data.stats.pendingRequests, color: 'orange' },
-                { icon: '✅', label: 'Completed', value: data.stats.completedDonations, color: 'green' },
+                { label: 'Total Users', value: data.stats.totalUsers },
+                { label: 'Donors', value: data.stats.totalDonors, },
+                { label: 'Receivers', value: data.stats.totalReceivers, },
+                { label: 'Total Donations', value: data.stats.totalDonations, },
+                { label: 'Pending', value: data.stats.pendingRequests, },
+                { label: 'Completed', value: data.stats.completedDonations, },
               ].map(s => (
                 <div key={s.label} className="stat-card">
                   <div className={`stat-icon ${s.color}`}>{s.icon}</div>
@@ -96,8 +96,8 @@ export default function AdminDashboard() {
             {/* Quick Links */}
             <div className="grid-2" style={{ marginTop: '1.5rem' }}>
               {[
-                { to: '/admin/users', icon: '👥', title: 'Manage Users', desc: 'Add, edit, or remove users' },
-                { to: '/admin/donations', icon: '📋', title: 'Donations', desc: 'Approve or reject requests' },
+                { to: '/admin/users', title: 'Manage Users', desc: 'Add, edit, or remove users' },
+                { to: '/admin/donations', title: 'Donations', desc: 'Approve or reject requests' },
               ].map(l => (
                 <Link key={l.to} to={l.to} className="card" style={{ padding: '1.5rem', display: 'flex', gap: '1rem', alignItems: 'center', textDecoration: 'none', transition: 'all 0.2s' }}
                   onMouseOver={e => e.currentTarget.style.boxShadow = '0 8px 24px rgba(0,0,0,0.12)'}
