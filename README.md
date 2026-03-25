@@ -20,8 +20,6 @@ A comprehensive web application designed to manage blood donation activities, co
 
 ### User Management
 - **User Registration & Login** - Secure authentication with JWT tokens
-- **Email Verification** - OTP-based email verification
-- **Password Reset** - Forgot password functionality with email recovery
 - **Role-Based Access Control** - Admin, Donor, and Receiver roles
 
 ### Donor Features
