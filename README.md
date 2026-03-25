@@ -81,9 +81,8 @@ blood-donation-system/
 │   │   ├── adminRoutes.js     # Admin endpoints
 │   │   ├── donorRoutes.js     # Donor endpoints
 │   │   └── receiverRoutes.js  # Receiver endpoints
-│   ├── utils/
-│   │   ├── jwt.js             # JWT utilities
-│   │   └── otp.js             # OTP generation
+│   ├
+│   │   
 │   ├── database.sql           # Database schema
 │   ├── package.json
 │   └── server.js              # Express server entry point
