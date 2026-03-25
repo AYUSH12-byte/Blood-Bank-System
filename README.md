@@ -109,7 +109,7 @@ blood-donation-system/
 │   ├── vite.config.js
 │   └── index.html
 │
-└── README.md (this file)
+└── README.md 
 ```
 
 ## 📦 Prerequisites
