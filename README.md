@@ -2,19 +2,6 @@
 
 A comprehensive web application designed to manage blood donation activities, connecting blood donors with recipients and providing administrative oversight.
 
-## 📋 Table of Contents
-
-- [Features](#features)
-- [Tech Stack](#tech-stack)
-- [Project Structure](#project-structure)
-- [Prerequisites](#prerequisites)
-- [Installation](#installation)
-- [Running the Application](#running-the-application)
-- [Environment Variables](#environment-variables)
-- [API Endpoints](#api-endpoints)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## ✨ Features
 
@@ -60,57 +47,6 @@ A comprehensive web application designed to manage blood donation activities, co
 - **Styling:** CSS
 - **Code Quality:** ESLint
 
-## 📁 Project Structure
-
-```
-blood-donation-system/
-├── backend/
-│   ├── config/
-│   │   ├── db.js              # Database configuration
-│   │   └── mailer.js          # Email configuration
-│   ├── controllers/
-│   │   ├── authController.js      # Authentication logic
-│   │   ├── adminController.js     # Admin operations
-│   │   ├── donorController.js     # Donor operations
-│   │   └── receiverController.js  # Receiver operations
-│   ├── middleware/
-│   │   └── auth.js            # JWT authentication middleware
-│   ├── models/                # Database models
-│   ├── routes/
-│   │   ├── authRoutes.js      # Auth endpoints
-│   │   ├── adminRoutes.js     # Admin endpoints
-│   │   ├── donorRoutes.js     # Donor endpoints
-│   │   └── receiverRoutes.js  # Receiver endpoints
-│   ├
-│   │   
-│   ├── database.sql           # Database schema
-│   ├── package.json
-│   └── server.js              # Express server entry point
-│
-├── frontend/
-│   ├── src/
-│   │   ├── components/
-│   │   │   └── Navbar.jsx     # Navigation component
-│   │   ├── context/
-│   │   │   └── AuthContext.jsx # Authentication context
-│   │   ├── pages/
-│   │   │   ├── admin/         # Admin pages
-│   │   │   ├── auth/          # Auth pages (login, register, etc.)
-│   │   │   ├── donor/         # Donor pages
-│   │   │   └── receiver/      # Receiver pages
-│   │   ├── routes/
-│   │   │   └── ProtectedRoute.jsx # Route protection component
-│   │   ├── api/
-│   │   │   └── axios.js       # Axios configuration
-│   │   ├── App.jsx            # Main App component
-│   │   ├── main.jsx           # React entry point
-│   │   └── assets/            # Static assets
-│   ├── package.json
-│   ├── vite.config.js
-│   └── index.html
-│
-└── README.md 
-```
 
 ## 📦 Prerequisites
 
@@ -238,14 +174,11 @@ npm run preview
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## 📄 License
-
-This project is licensed under the ISC License - see the LICENSE file for details.
 
 ## 📧 Support
 
-For support,ayuchy93858@example.com or open an issue in the repository.
+For support,ayuchy93858@gmail.com or open an issue in the repository.
 
 ---
 
-**Happy Coding! 🎉**
+**Happy Coding! **
